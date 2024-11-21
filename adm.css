@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #ffffff, #d4ac6c, #d88c48, #7c2724);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 350px;
+    color: #2b344b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.6s ease-out;
+}
+
+.title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input div {
+    display: flex;
+    align-items: center;
+    border: 2px solid #6f7e8a;
+    border-radius: 22px;
+    padding: 5px 10px;
+}
+
+.input i {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    color: #2b344b;
+    font-size: 14px;
+    padding: 5px;
+}
+
+#btn button {
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    display: inline-block;
+    background-color: white;
+    border: 2px solid #7c2724;
+    border-radius: 12px;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#btn button:hover {
+    background: #7c2724;
+    color: white;
+}
+
+.card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    width: 300px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #333;
+}
+
+#warningCard {
+    border-left: 5px solid #f39c12;
+}
+
+#successCard {
+    border-left: 5px solid #27ae60;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

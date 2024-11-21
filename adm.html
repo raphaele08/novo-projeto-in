@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/adm.css">
+    <script src="https://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
+    <title>Formulário de Login</title>
+</head>
+<body>
+    <form action="#" id="loginForm" method="post">
+        <h2 class="title">Login</h2>
+        
+        <div class="input">
+            <label for="username">Nome</label>
+            <div>
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input id="username" name="username" placeholder="Digite seu nome de usuário" type="text" required>
+            </div>
+        </div>
+        
+        <div class="input">
+            <label for="email">Email</label>
+            <div>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <input id="email" name="email" placeholder="Digite seu email" type="email" required>
+            </div>
+        </div>
+        
+        <div class="input">
+            <label for="senha">Senha</label>
+            <div>
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input id="senha" name="senha" placeholder="Digite sua senha" type="password" required>
+            </div>
+        </div>
+        
+        <div id="btn">
+            <button type="button" onclick="validateForm()">Login</button>
+        </div>
+    </form>
+
+    <!-- Card de Aviso -->
+    <div id="warningCard" class="card">
+        <div class="card-content">
+            <h3>Atenção!</h3>
+            <p>Por favor, preencha todos os campos antes de prosseguir.</p>
+        </div>
+    </div>
+
+    <!-- Card exibido após o login -->
+    <div id="successCard" class="card">
+        <div class="card-content">
+            <h3>Bem-vindo!</h3>
+            <p>Login realizado com sucesso.</p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+
+            // Verifica se todos os campos foram preenchidos
+            if (!username || !email || !senha) {
+                showCard('warningCard');
+                return;
+            }
+
+            // Se todos os campos foram preenchidos, exibe o card de sucesso
+            showCard('successCard');
+            
+            // Redireciona para a página principal após 3 segundos
+            setTimeout(function() {
+                window.location.href = "index.html"; // Substitua por sua página principal
+            }, 3000); // Redireciona após 3 segundos
+        }
+
+        function showCard(cardId) {
+            const card = document.getElementById(cardId);
+            card.style.display = 'block'; // Exibe o card
+            setTimeout(() => {
+                card.style.display = 'none'; // Esconde após 1.5 segundos (card de aviso)
+            }, 1500); // 1.5 segundos para o card de aviso
+
+            // Para o card de sucesso, ele fica visível por 3 segundos
+            if (cardId === 'successCard') {
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 3000); // Esconde o card após 3 segundos
+            }
+        }
+    </script>
+</body>
+</html>
